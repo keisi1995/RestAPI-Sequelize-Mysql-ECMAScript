@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 import { validateLogin } from '../http/validator/user';
-import { login } from '../http/controller/authenticateController';
+import { Auth } from '../http/controller/authenticateController';
  
 router.route('/')
     .post(validateLogin, (req, res) => { 
