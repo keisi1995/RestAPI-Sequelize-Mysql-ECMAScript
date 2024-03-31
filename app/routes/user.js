@@ -6,22 +6,12 @@ import authMiddleware from '../http/middleware/authMiddleware';
 import * as User from '../http/controller/userController';
 
 router.route('/')
-    .get(authMiddleware, (req, res) => { 
-        User.index(req, res);
-    })
-    .post(validateStore, (req, res) => {
-        User.store(req, res);
-    })
+    .get(authMiddleware, User.index)
+    .post(validateStore, User.store)
 
 router.route('/:id_user(\\d+)')
-    .get(authMiddleware, (req, res) => {
-        User.show(req, res);
-    })
-    .put(validateStore, authMiddleware, (req, res) => {
-        User.update(req, res);
-    })
-    .delete(authMiddleware, (req, res) => {
-        User.destroy(req, res); 
-    })
+    .get(authMiddleware, User.show)
+    .put(validateStore, authMiddleware, User.update)
+    .delete(authMiddleware, User.destroy)
 
 export default router;

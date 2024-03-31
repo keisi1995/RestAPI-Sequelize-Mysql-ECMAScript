@@ -1,6 +1,6 @@
-require('dotenv').config();
 import jwt from 'jsonwebtoken';
-import { error } from '../Helpers/HttpResponse';
+
+import { error } from '../helpers/httpResponse';
 
 export default (req, res, next) => {
     console.log('midelware')

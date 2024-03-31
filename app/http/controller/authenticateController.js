@@ -1,7 +1,7 @@
-require('dotenv').config();
-import { User } from '../../model/';
-import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
+import jwt from 'jsonwebtoken';
+
+import { User } from '../../model/';
 import { error, success } from '../helpers/httpResponse';
 import { validationErrors } from '../helpers/myHelper';
   

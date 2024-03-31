@@ -1,6 +1,7 @@
+import { validationResult } from 'express-validator';
+
 import { User } from '../../model/';
 import { error, success } from '../helpers/httpResponse';
-import { validationResult } from 'express-validator';
 import { validationErrors } from '../helpers/myHelper';
 
 export const index = async (req, res) => {

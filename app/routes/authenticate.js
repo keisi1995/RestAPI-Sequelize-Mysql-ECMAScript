@@ -5,9 +5,6 @@ import { validateLogin } from '../http/validator/user';
 import * as Auth from '../http/controller/authenticateController';
  
 router.route('/')
-    .post(validateLogin, (req, res) => { 
-        Auth.login(req, res); 
-    })
-
+    .post(validateLogin, Auth.login)
 
 export default router;
